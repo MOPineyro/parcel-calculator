@@ -29,8 +29,9 @@ class Parcels
 
   def cost_to_ship
     standard_rate = 5
-    cost_per_lb = @weight/0.5 + self.volume/0.5
-    standard_rate * cost_per_lb
+    cost_per_lb = (@weight/0.5 + self.volume/0.5)/10
+    shipping_cost = standard_rate + cost_per_lb
+    shipping_cost.round(2)
   end
 
 end
